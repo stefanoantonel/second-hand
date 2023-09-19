@@ -44,7 +44,7 @@ def get_initial_price(soup):
 def check_second_hand(soup, used_prices):
     used = soup.find('h4', string="Buy secondhand")
     if used is None:
-        return
+        return used_prices
 
     for sibling in used.next_siblings:
         if sibling.a:
@@ -71,8 +71,10 @@ def find_other_links(soup):
 
 # In[8]:
 
+html_body = "<br />"
 
 def crawling(url, title):
+    global html_body
     used_prices = []
     
     soup = get_soup(url)
@@ -82,7 +84,9 @@ def crawling(url, title):
     for page in find_other_links(soup):
         other_soup = get_soup(f'{BASE_URL}{page}')
         check_second_hand(other_soup, used_prices)
-    print(f'---{title}---> New: {[initial_price]} > Used: {used_prices}')
+    result = f'--- {title} ---> \t New {[initial_price]} > Used: {used_prices}'
+    html_body += f"<br/> <p>--- {title} ---> New {initial_price} > Used: {used_prices}</p>"
+    print(result)
 
 
 # In[9]:
@@ -108,16 +112,31 @@ pages = [
         'urls': ['https://www.digitec.ch/en/s1/product/apple-iphone-13-128-gb-pink-610-sim-esim-12-mpx-5g-smartphones-16644873'],
         'title': 'iPhone 13'
     },
+    {
+        'urls': ['https://www.digitec.ch/en/s1/product/apple-iphone-13-mini-128-gb-midnight-540-sim-esim-12-mpx-5g-smartphones-16644786'],
+        'title': 'iPhone 13 mini'
+    },
 ]
 
 
 # In[10]:
+
+def generate_html(html_body):
+    html = f'''
+        <!DOCTYPE html>
+        <html>
+            <body>
+                <div>{html_body}</div>
+            </body>
+        </html>
+    '''
+    with open('./dist/index.html', 'w') as f:
+        f.write(html)
 
 
 for page in pages:
     for url in page['urls']:
         crawling(url, page['title'])
 
-
-# In[ ]:
+generate_html(html_body)
 
