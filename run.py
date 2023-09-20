@@ -97,13 +97,16 @@ with open('./pages.json') as f:
 
 
 # In[10]:
-
+REFURBISHED_URL = 'https://www.apple.com/ch-de/shop/refurbished/ipad/ipad'
 def generate_html(html_body):
     html = f'''
         <!DOCTYPE html>
         <html>
             <body>
                 <div>{html_body}</div>
+                <div>
+                    <a href={REFURBISHED_URL} target="_blank">Refurbished</a>
+                </div>
             </body>
         </html>
     '''
