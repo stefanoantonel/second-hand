@@ -23,13 +23,6 @@ def get_soup(url):
     soup = BeautifulSoup(content, 'html.parser')
     return soup
 
-
-# In[4]:
-
-
-soup = get_soup('https://www.digitec.ch/en/s1/product/google-pixel-7a-128-gb-charcoal-610-sim-esim-64-mpx-5g-smartphones-32960864')
-
-
 # In[5]:
 
 
@@ -72,7 +65,7 @@ def find_other_links(soup):
 
 # In[8]:
 
-html_body = "<br />"
+html_body = "<tr></tr>"
 
 def crawling(url, title):
     global html_body
@@ -86,7 +79,8 @@ def crawling(url, title):
         other_soup = get_soup(f'{BASE_URL}{page}')
         check_second_hand(other_soup, used_prices)
     result = f'--- {title} ---> \t New {[initial_price]} > Used: {used_prices}'
-    html_body += f"<br/> <p>--- {title} ---> New {initial_price} > Used: {used_prices}</p>"
+    table_data = f"<td>{title}</td><td>{initial_price}</td><td>{used_prices}</td>"
+    html_body += f"<tr>{table_data}</tr>"
     print(result)
 
 
@@ -102,11 +96,22 @@ def generate_html(html_body):
     html = f'''
         <!DOCTYPE html>
         <html>
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
             <body>
-                <div>{html_body}</div>
-                <div>
+                <table>
+                    <tr>
+                        <th>Phone</th>
+                        <th>New</th>
+                        <th>Used</th>
+                    </tr>
+                    {html_body}
+                </table>
+                <br />
+                <p>
                     <a href={REFURBISHED_URL} target="_blank">Refurbished</a>
-                </div>
+                </p>
             </body>
         </html>
     '''
