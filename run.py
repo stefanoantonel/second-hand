@@ -43,7 +43,8 @@ def check_second_hand(soup, used_prices):
     for sibling in used.next_siblings:
         if sibling.a:
             price = sibling.a.div.strong.text
-            used_prices.append(price)
+            url = sibling.a['href']
+            used_prices.append(f"<a href='{BASE_URL}/{url}' target='_blank'>{price}</a>")
     return used_prices
 
 
@@ -76,10 +77,12 @@ def crawling(url, title):
     check_second_hand(soup, used_prices)
 
     for page in find_other_links(soup):
-        other_soup = get_soup(f'{BASE_URL}{page}')
+        page_url = f'{BASE_URL}{page}'
+        other_soup = get_soup(page_url)
         check_second_hand(other_soup, used_prices)
     result = f'--- {title} ---> \t New {[initial_price]} > Used: {used_prices}'
-    table_data = f"<td>{title}</td><td>{initial_price}</td><td>{used_prices}</td>"
+    initial_title = f"<a href='{url}' target='_blank'>{title}</a>"
+    table_data = f"<td>{initial_title}</td><td>{initial_price}</td><td>{used_prices}</td>"
     html_body += f"<tr>{table_data}</tr>"
     print(result)
 
@@ -98,6 +101,16 @@ def generate_html(html_body):
         <html>
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>
+                    table, th, td {{
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        width: 100%
+                    }}
+                    th, td {{
+                        padding: 15px;
+                    }}
+                </style>
             </head>
             <body>
                 <table>
