@@ -1,25 +1,39 @@
 [
-  {
-      "urls": ["https://www.digitec.ch/en/s1/product/google-pixel-7a-128-gb-charcoal-610-sim-esim-64-mpx-5g-smartphones-32960864"],
-      "title": "Pixel 7a"
-  },
-  {
-      "urls": ["https://www.digitec.ch/en/s1/product/google-pixel-6a-128-gb-charcoal-610-sim-esim-1220-mpx-5g-smartphones-21531648"],
-      "title": "Pixel 6a"
-  },
-  {
-      "urls": [
-          "https://www.digitec.ch/en/s1/product/apple-ipad-2022-10-gen-wlan-only-1090-64-gb-yellow-tablets-22715682",
-          "https://www.digitec.ch/en/s1/product/apple-ipad-2022-10-gen-wlan-only-1090-64-gb-silver-tablets-22715680"
-      ],
-      "title": "iPad 10"
-  },
-  {
-      "urls": ["https://www.digitec.ch/en/s1/product/apple-iphone-13-128-gb-pink-610-sim-esim-12-mpx-5g-smartphones-16644873"],
-      "title": "iPhone 13"
-  },
-  {
-      "urls": ["https://www.digitec.ch/en/s1/product/apple-iphone-13-mini-128-gb-midnight-540-sim-esim-12-mpx-5g-smartphones-16644786"],
-      "title": "iPhone 13 mini"
-  }
+    {
+        "urls": [
+            "https://www.digitec.ch/en/s1/product/google-pixel-8-128-gb-rose-620-sim-esim-50-mpx-5g-smartphones-37936677"
+        ],
+        "title": "Pixel 8"
+    },
+    {
+        "urls": [
+            "https://www.digitec.ch/en/s1/product/google-pixel-7a-128-gb-charcoal-610-sim-esim-64-mpx-5g-smartphones-32960864"
+        ],
+        "title": "Pixel 7a"
+    },
+    {
+        "urls": [
+            "https://www.digitec.ch/en/s1/product/google-pixel-6a-128-gb-charcoal-610-sim-esim-1220-mpx-5g-smartphones-21531648"
+        ],
+        "title": "Pixel 6a"
+    },
+    {
+        "urls": [
+            "https://www.digitec.ch/en/s1/product/apple-ipad-2022-10-gen-wlan-only-1090-64-gb-yellow-tablets-22715682",
+            "https://www.digitec.ch/en/s1/product/apple-ipad-2022-10-gen-wlan-only-1090-64-gb-silver-tablets-22715680"
+        ],
+        "title": "iPad 10"
+    },
+    {
+        "urls": [
+            "https://www.digitec.ch/en/s1/product/apple-iphone-13-128-gb-pink-610-sim-esim-12-mpx-5g-smartphones-16644873"
+        ],
+        "title": "iPhone 13"
+    },
+    {
+        "urls": [
+            "https://www.digitec.ch/en/s1/product/apple-iphone-13-mini-128-gb-midnight-540-sim-esim-12-mpx-5g-smartphones-16644786"
+        ],
+        "title": "iPhone 13 mini"
+    }
 ]
