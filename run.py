@@ -52,7 +52,7 @@ def check_second_hand(soup, used_prices):
 
 
 def find_other_links(soup):
-    color_section = soup.find('h4', string="Colour")
+    color_section = soup.find('h2', string="Colour")
     other_phones = color_section.next_sibling
     a_tags = other_phones.find_all('a')
 
