@@ -13,12 +13,6 @@
     },
     {
         "urls": [
-            "https://www.digitec.ch/en/s1/product/google-pixel-6a-128-gb-charcoal-610-sim-esim-1220-mpx-5g-smartphones-21531648"
-        ],
-        "title": "Pixel 6a (152cm)"
-    },
-    {
-        "urls": [
             "https://www.digitec.ch/en/s1/product/apple-ipad-2022-10-gen-wlan-only-1090-64-gb-yellow-tablets-22715682",
             "https://www.digitec.ch/en/s1/product/apple-ipad-2022-10-gen-wlan-only-1090-64-gb-silver-tablets-22715680"
         ],
@@ -32,8 +26,14 @@
     },
     {
         "urls": [
-            "https://www.digitec.ch/en/s1/product/apple-iphone-13-mini-128-gb-midnight-540-sim-esim-12-mpx-5g-smartphones-16644786"
+            "https://www.digitec.ch/en/s1/product/apple-iphone-13-pro-128-gb-graphites-610-sim-esim-12-mpx-5g-smartphones-16644948"
         ],
-        "title": "iPhone 13 mini"
+        "title": "iPhone 13 pro"
+    },
+    {
+        "urls": [
+            "https://www.digitec.ch/en/s1/product/apple-iphone-14-128-gb-midnight-610-sim-esim-12-mpx-5g-smartphones-21997044"
+        ],
+        "title": "iPhone 14"
     }
 ]
